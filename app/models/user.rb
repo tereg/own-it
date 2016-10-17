@@ -6,7 +6,8 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, :username, :pwd_hash, :email, presence: true
 	validates :username, :email, uniqueness: true 
-    
+  has_many  :subjects 
+
   def password
     @password ||= Password.new(pwd_hash)
   end
