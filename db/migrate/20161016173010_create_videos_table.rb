@@ -7,5 +7,6 @@ class CreateVideosTable < ActiveRecord::Migration
     t.integer	:subject_id
 
     t.timestamps null: false
-  end
-end
+  	end
+	end
+end 
