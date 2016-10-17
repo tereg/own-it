@@ -15,5 +15,4 @@ class User < ActiveRecord::Base
     @password = Password.create(new_password)
     self.pwd_hash = @password
   end
-
 end
