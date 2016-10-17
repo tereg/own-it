@@ -5,10 +5,10 @@ end
 post '/sessions' do
   @user = User.find_by_email(params[:email])
 
-  if @user && @user.password == params[:pwd_hash]
+  if @user && @user.password == params[:password]
     session[:id] = @user.id
     # login(@user)
-    redirect '/users/#{@user.id}'
+    redirect "/users/#{@user.id}"
 
   else
     @errors = ["Username && Password not found."]
