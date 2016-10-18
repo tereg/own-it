@@ -2,18 +2,18 @@
 #   session.inspect
 # end
 
-get '/sessions/:id/subjects' do 
+get '/users/:id/subjects' do 
   @session = User.find(params[:id])
   @subjects = @session.subjects
   erb :'subjects/index'
 end
 
-get '/sessions/:id/subjects/new' do 
+get '/users/:id/subjects/new' do 
   @session = User.find(params[:id])
   erb :'subjects/new'
 end
 
-post '/sessions/:id/subjects' do 
+post '/users/:id/subjects' do 
   @session = User.find(params[:id])
   @subject = @session.subjects.new(params[:subject])
 
@@ -22,4 +22,10 @@ post '/sessions/:id/subjects' do
   else
     erb :'subjects/new' #show new subjects view again(potentially displaying errors)
   end
+end
+
+get '/users/:user_id/subjects/:id' do 
+  @user = User.find(params[:user_id])
+  @subject = @user.subjects.find(params[:id])
+  erb :'subjects/show'
 end

@@ -5,7 +5,7 @@
 <h2>Currently Learning...</h2>
 
 	<% @subjects.each do |subject| %>
-		<%= subject.name %><br>
+		<a href="/users/<%= @user.id %>/subjects/<%= subject.id %>"><%= subject.name %></a><br>
 	<% end %>
 
  <a href="/sessions/<%= @user.id %>/subjects/new">Add new subject</a>
