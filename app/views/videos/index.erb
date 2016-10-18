@@ -1,3 +1,4 @@
+<h1>Videos</h1>
 <% @videos.each do |video| %>
 		<a href="/users/<%= @user.id %>/subjects/<%= @subject.id %>/videos/<%= video.id %>"><%= video.name %></a><br>
 	<% end %>
