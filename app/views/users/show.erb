@@ -4,11 +4,12 @@
 
 <h2>Currently Learning...</h2>
 
+ 
 	<% @subjects.each do |subject| %>
 		<a href="/users/<%= @user.id %>/subjects/<%= subject.id %>"><%= subject.name %></a><br>
-	<% end %>
+	<% end %> 
 
- <a href="/sessions/<%= @user.id %>/subjects/new">Add new subject</a>
+ <a href="/users/<%= @user.id %>/subjects/new">Add new subject</a>
 
 <h2>Archive</h2>
 
