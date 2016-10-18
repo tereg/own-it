@@ -1,7 +1,15 @@
-<h1>USERS SHOW / PROFILE PAGE</h1>
-<h2>get '/users/:id'</h2>
-
 <% if current_user %>
-  <h2>Welcome <%= current_user.username %>!</h2>
-
+  <h1>Welcome <%= current_user.username %>!</h1>
 <% end %>
+
+<h2>Currently Learning...</h2>
+
+ 
+	<% @subjects.each do |subject| %>
+		<a href="/users/<%= @user.id %>/subjects/<%= subject.id %>"><%= subject.name %></a><br>
+	<% end %> 
+
+ <a href="/users/<%= @user.id %>/subjects/new">Add new subject</a>
+
+<h2>Archive</h2>
+

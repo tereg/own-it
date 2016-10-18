@@ -26,7 +26,9 @@ end
 # USERS SHOW
 get '/users/:id' do
   @user = User.find(params[:id])
-  erb :'users/show'
+  @subjects = @user.subjects
+  erb :'users/show', locals: { subjects: @subjects } # add locals here
+
 end
 
 # # USERS EDIT
