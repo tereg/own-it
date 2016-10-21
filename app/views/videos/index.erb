@@ -1,4 +1,26 @@
 <h1>Videos</h1>
-<% @videos.each do |video| %>
-		<a href="/users/<%= @user.id %>/subjects/<%= @subject.id %>/videos/<%= video.id %>"><%= video.name %></a><br>
-	<% end %>
+
+
+<h2>Search for videos</h2>
+
+
+<form action="/users/<%= @user.id %>/subjects/<%= @subject.id %>/videos" method="get">
+	<input type="text" name="search">
+	<input type="submit">
+</form>
+
+
+<!-- <iframe id="player" type="text/html" width="640" height="390"
+  src="http://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1&origin=http://example.com"
+  frameborder="0"></iframe> -->
+
+
+<!-- embedded youtube video -->
+<% if @youtube_videos %>
+<iframe id="existing-iframe-example"
+        width="640" height="360"
+        src="https://www.youtube.com/embed/<%= @youtube_videos['items'][0]['id']['videoId'] %>?enablejsapi=1"
+        frameborder="0"
+        style="border: solid 4px #37474F"
+></iframe>
+<% end %>

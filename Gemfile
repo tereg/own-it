@@ -10,11 +10,14 @@ gem 'sinatra-contrib'
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
+gem 'dotenv'
 gem 'rake'
 
 gem 'bcrypt'
 gem 'shotgun'
 gem 'pry'
+gem 'httparty'
+gem 'youtube_it'
 
 group :test do
   gem 'shoulda-matchers'
